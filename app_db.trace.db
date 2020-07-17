@@ -1,0 +1,348 @@
+2020-07-17 10:00:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM INVOICES TEST USERS[*]"; SQL statement:
+SELECT * FROM INVOICES TEST USERS [42000-200]
+2020-07-17 10:11:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO OPERATORS VALUES(
+
+		('Pastrashko','zlato0','pastrashko000@gmail.com', '2019-1-4'),
+        ('Dragan','nodiggity','dtsankov@abv.bg', '2020-4-12'),
+        ('Mustakan','qwerty1','mustakancho@gmail.com', '2020-5-1')[*]"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO operators VALUES(
+
+		('Pastrashko','zlato0','pastrashko000@gmail.com', '2019-1-4'),
+        ('Dragan','nodiggity','dtsankov@abv.bg', '2020-4-12'),
+        ('Mustakan','qwerty1','mustakancho@gmail.com', '2020-5-1') [42001-200]
+2020-07-17 10:11:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement ")[*]"; SQL statement:
+) [42000-200]
+2020-07-17 10:11:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO OPERATORS VALUES(
+
+		('Pastrashko','zlato0','pastrashko000@gmail.com', '2019-1-4')
+        ([*]'Dragan','nodiggity','dtsankov@abv.bg', '2020-4-12')
+        ('Mustakan','qwerty1','mustakancho@gmail.com', '2020-5-1')
+
+
+)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO operators VALUES(
+
+		('Pastrashko','zlato0','pastrashko000@gmail.com', '2019-1-4')
+        ('Dragan','nodiggity','dtsankov@abv.bg', '2020-4-12')
+        ('Mustakan','qwerty1','mustakancho@gmail.com', '2020-5-1')
+
+
+) [42001-200]
+2020-07-17 10:16:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "EXTRAS VARCHAR(30)": "'Za loyalni klienti s namalenie 15%' (34)"; SQL statement:
+INSERT INTO services VALUES
+
+
+		('Koledno chudo',19.99, 'Neogranicheni','100',10000,1000,100,'Udvoeni sms-si'),
+        ('Standart',12.99, '3000','0',3500,0,0,''),
+        ('Baba & Dedo',8.99, '500','0',0,0,0,''),
+        ('Smart Baba & Dedo',11.99, '600','0',2000,0,0,''),
+        ('Mega',8.99, 'Neogranicheni','1000',20000,5000,500,'Za loyalni klienti s namalenie 15%') [22001-200]
+2020-07-17 10:16:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SERVICES VALUES
+
+
+		('Koledno chudo',19.99, 'Neogranicheni','100',10000,1000,100,'Udvoeni sms-si')
+        ([*]'Standart',12.99, '3000','0',3500,0,0,'')
+        ('Baba & Dedo',8.99, '500','0',0,0,0,'')
+        ('Smart Baba & Dedo',11.99, '600','0',2000,0,0,'')
+        ('Mega',8.99, 'Neogranicheni','1000',20000,5000,500,'Za loyalni klienti s namalenie 15%')"; SQL statement:
+INSERT INTO services VALUES
+
+
+		('Koledno chudo',19.99, 'Neogranicheni','100',10000,1000,100,'Udvoeni sms-si')
+        ('Standart',12.99, '3000','0',3500,0,0,'')
+        ('Baba & Dedo',8.99, '500','0',0,0,0,'')
+        ('Smart Baba & Dedo',11.99, '600','0',2000,0,0,'')
+        ('Mega',8.99, 'Neogranicheni','1000',20000,5000,500,'Za loyalni klienti s namalenie 15%') [42000-200]
+2020-07-17 10:17:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "EXTRAS VARCHAR(30)": "'Za loyalni klienti s namalenie 15%' (34)"; SQL statement:
+INSERT INTO services VALUES
+
+        ('Standart',12.99, '3000','0',3500,0,0,''),
+        ('Baba & Dedo',8.99, '500','0',0,0,0,''),
+        ('Smart Baba & Dedo',11.99, '600','0',2000,0,0,''),
+        ('Mega',8.99, 'Neogranicheni','1000',20000,5000,500,'Za loyalni klienti s namalenie 15%') [22001-200]
+2020-07-17 10:18:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SERVICES VALUES
+        ('Standart',12.99, '3000','0',3500,0,0,'')
+        ([*]'Baba & Dedo',8.99, '500','0',0,0,0,'')
+        ('Smart Baba & Dedo',11.99, '600','0',2000,0,0,'')
+        ('Mega',8.99, 'Neogranicheni','1000',20000,5000,500,'namalenie 15%')"; SQL statement:
+INSERT INTO services VALUES
+        ('Standart',12.99, '3000','0',3500,0,0,'')
+        ('Baba & Dedo',8.99, '500','0',0,0,0,'')
+        ('Smart Baba & Dedo',11.99, '600','0',2000,0,0,'')
+        ('Mega',8.99, 'Neogranicheni','1000',20000,5000,500,'namalenie 15%') [42000-200]
+2020-07-17 10:39:51 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:E:/Java/MobileServicesApp/app_db.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+
+	at project.Main.main(Main.java:11)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:E:/Java/MobileServicesApp/app_db.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 25 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:E:/Java/MobileServicesApp/app_db.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 20 more
+2020-07-17 10:40:43 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:E:/Java/MobileServicesApp/app_db.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:378)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:361)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2930)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2476)
+	at org.h2.engine.Database.open(Database.java:697)
+	at org.h2.engine.Database.openDatabase(Database.java:276)
+	at org.h2.engine.Database.<init>(Database.java:270)
+	at org.h2.engine.Engine.openSession(Engine.java:64)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:354)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:116)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:100)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+
+	at project.Main.main(Main.java:11)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:E:/Java/MobileServicesApp/app_db.mv.db [1.4.195/7]" [50000-195]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 25 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:E:/Java/MobileServicesApp/app_db.mv.db [1.4.195/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:765)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:347)
+	... 20 more
+2020-07-17 12:27:30 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USERS VALUES
+		
+		('Pesho Mladenov','peshito','peshmladenov@abv.bg')
+        ([*]'Dedo Hristo','123456','dedohristo@gmail.com')
+		('Baba Ivana','ivana66','babeto@abv.bg')
+		('Mariika Gospodinova','marryto0o','mari@gmail.com')"; SQL statement:
+INSERT INTO users VALUES
+		
+		('Pesho Mladenov','peshito','peshmladenov@abv.bg')
+        ('Dedo Hristo','123456','dedohristo@gmail.com')
+		('Baba Ivana','ivana66','babeto@abv.bg')
+		('Mariika Gospodinova','marryto0o','mari@gmail.com') [42000-200]
+2020-07-17 12:27:44 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USERS VALUES
+		
+		('Pesho Mladenov','peshito','peshmladenov@abv.bg')
+        ([*]'Dedo Hristo','123456','dedohristo@gmail.com')
+		('Baba Ivana','ivana66','babeto@abv.bg')
+		('Mariika Gospodinova','marryto0o','mari@gmail.com')"; SQL statement:
+INSERT INTO users VALUES
+		
+		('Pesho Mladenov','peshito','peshmladenov@abv.bg')
+        ('Dedo Hristo','123456','dedohristo@gmail.com')
+		('Baba Ivana','ivana66','babeto@abv.bg')
+		('Mariika Gospodinova','marryto0o','mari@gmail.com') [42000-200]
+2020-07-17 12:27:57 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO users VALUES
+		
+		('Pesho Mladenov','peshito','peshmladenov@abv.bg'),
+        ('Dedo Hristo','123456','dedohristo@gmail.com'),
+		('Baba Ivana','ivana66','babeto@abv.bg'),
+		('Mariika Gospodinova','marryto0o','mari@gmail.com') [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+2020-07-17 12:29:14 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO USERS VALUES
+		
+		('Pesho Mladenov','peshito','peshmladenov@abv.bg', '2018-11-11'),
+        ('Dedo Hristo','123456','dedohristo@gmail.com', '2019-1-1'),
+		('Baba Ivana','ivana66','babeto@abv.bg', '2019-8-7'),
+		('Mariika Gospodinova','marryto0o','mari@gmail.com, '2020[*]-7-4'')"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO users VALUES
+		
+		('Pesho Mladenov','peshito','peshmladenov@abv.bg', '2018-11-11'),
+        ('Dedo Hristo','123456','dedohristo@gmail.com', '2019-1-1'),
+		('Baba Ivana','ivana66','babeto@abv.bg', '2019-8-7'),
+		('Mariika Gospodinova','marryto0o','mari@gmail.com, '2020-7-4'') [42001-200]
+2020-07-17 13:28:15 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW PUBLIC[*]"; SQL statement:
+show public [42000-200]
+2020-07-17 13:33:19 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "MOBILESERVICES[*]"; expected "MERGE"; SQL statement:
+MOBILESERVICES [42001-200]
+2020-07-17 13:34:21 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP MOBILESERVICES[*]"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+drop MOBILESERVICES [42001-200]
+2020-07-17 13:34:27 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "MOBILESERVICES" because "CONSTRAINT_5" depends on it; SQL statement:
+drop table MOBILESERVICES [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+2020-07-17 13:36:10 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO MOBILESERVICES VALUES
+		('0878123456','Dedo Hristo','Smart Baba & Dedo')
+([*]"; SQL statement:
+INSERT INTO mobileServices VALUES
+		('0878123456','Dedo Hristo','Smart Baba & Dedo')
+( [42000-200]
+2020-07-17 14:52:52 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT *INVOICES[*], MOBILESERVICES.USER_NAME, MOBILESERVICES.SERVICE_NAME FROM INVOICES JOIN MOBILESERVICES WHERE STATUS = 'NOT_PAID'"; SQL statement:
+SELECT *invoices, mobileServices.user_name, mobileServices.service_name FROM invoices JOIN mobileServices WHERE status = 'NOT_PAID' [42000-200]
+2020-07-17 14:53:32 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT INVOICES*,[*] MOBILESERVICES.USER_NAME, MOBILESERVICES.SERVICE_NAME FROM INVOICES JOIN MOBILESERVICES"; SQL statement:
+SELECT invoices*, mobileServices.user_name, mobileServices.service_name FROM invoices JOIN mobileServices [42000-200]
+2020-07-17 14:53:38 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT *INVOICES[*], MOBILESERVICES.USER_NAME, MOBILESERVICES.SERVICE_NAME FROM INVOICES JOIN MOBILESERVICES"; SQL statement:
+SELECT *invoices, mobileServices.user_name, mobileServices.service_name FROM invoices JOIN mobileServices [42000-200]
+2020-07-17 14:56:36 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Function "MOBILESERVICES" not found; SQL statement:
+SELECT invoices.price, mobileServices.user_name, mobileServices.service_name FROM invoices JOIN mobileServices ON invoices.mobileservices_mobilenumber = mobileServices(mobileNumber) [90022-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.readJavaFunction(Parser.java:3565)
+	at org.h2.command.Parser.readFunction(Parser.java:3770)
+	at org.h2.command.Parser.readTerm(Parser.java:4305)
+	at org.h2.command.Parser.readFactor(Parser.java:3343)
+	at org.h2.command.Parser.readSum(Parser.java:3330)
+	at org.h2.command.Parser.readConcat(Parser.java:3305)
+	at org.h2.command.Parser.readCondition(Parser.java:3238)
+	at org.h2.command.Parser.readExpression(Parser.java:3059)
+	at org.h2.command.Parser.readJoinSpecification(Parser.java:2460)
+	at org.h2.command.Parser.readJoin(Parser.java:2422)
+	at org.h2.command.Parser.parseJoinTableFilter(Parser.java:2839)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2828)
+	at org.h2.command.Parser.parseSelect(Parser.java:2959)
+	at org.h2.command.Parser.parseQuerySub(Parser.java:2817)
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2649)
+	at org.h2.command.Parser.parseQuery(Parser.java:2620)
+	at org.h2.command.Parser.parsePrepared(Parser.java:868)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+2020-07-17 14:57:58 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "INVOICE.STATUS" not found; SQL statement:
+SELECT invoices.price, mobileServices.user_name, mobileServices.service_name FROM invoices JOIN mobileServices ON invoices.mobileservices_mobilenumber = mobileServices.mobileNumber WHERE invoice.status='not_paid' [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:190)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:135)
+	at org.h2.command.dml.Select.prepare(Select.java:1209)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
+2020-07-17 16:16:00 jdbc[40]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "INVOICES.MOBILESERVICE_MOBILENUMBER" not found; SQL statement:
+SELECT *, mobileServices.mobileNumber FROM invoices JOIN mobileServices ON invoices.mobileService_mobileNumber=mobileServices.mobileNumber [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:190)
+	at org.h2.command.dml.Select.prepare(Select.java:1209)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.lang.Thread.run(Unknown Source)
